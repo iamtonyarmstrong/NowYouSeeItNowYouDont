@@ -14,14 +14,18 @@
 
 @implementation InboxViewController
 
-
+#pragma mark - View lifecycle methods
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     NSLog(@"wired right");
+
+    //Shows password flow immediately when view displays
     [self performSegueWithIdentifier:@"showLogin" sender:self];
 
+
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

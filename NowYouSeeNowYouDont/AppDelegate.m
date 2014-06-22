@@ -18,7 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Remove all boilerplate code when using a storyboard to set up the interface...
-    
+
+    [Parse setApplicationId:@"33htDeHKMI3X7y2G5tJabjZlp8zWgzxNZdQYdg22"
+                  clientKey:@"OtEg3KdotbiYwmEjK0xvSJTkVprViNv4rD08ZFk4"];
+
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
     return YES;
 }
 
