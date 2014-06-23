@@ -27,6 +27,8 @@
 		92E865931957876F00DC00D7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E865921957876F00DC00D7 /* Security.framework */; };
 		92E865951957877600DC00D7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E865941957877600DC00D7 /* StoreKit.framework */; };
 		92E865971957879100DC00D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E865961957879100DC00D7 /* SystemConfiguration.framework */; };
+		92E8659B1957ACBD00DC00D7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E8659A1957ACBD00DC00D7 /* LoginViewController.m */; };
+		92E8659E1957ACD200DC00D7 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E8659D1957ACD200DC00D7 /* SignupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		92E865921957876F00DC00D7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		92E865941957877600DC00D7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		92E865961957879100DC00D7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		92E865991957ACBD00DC00D7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		92E8659A1957ACBD00DC00D7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		92E8659C1957ACD200DC00D7 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignupViewController.h; path = ../SignupViewController.h; sourceTree = "<group>"; };
+		92E8659D1957ACD200DC00D7 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignupViewController.m; path = ../SignupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		92C3E81E195737D800BCBA42 /* NowYouSeeNowYouDont */ = {
 			isa = PBXGroup;
 			children = (
+				92E8659F1957ACDF00DC00D7 /* Credentialing Classes */,
 				92E865801957448200DC00D7 /* Controllers */,
 				92E865831957864000DC00D7 /* Images */,
 				92C3E81F195737D800BCBA42 /* Supporting Files */,
@@ -192,6 +199,17 @@
 				92E865811957861C00DC00D7 /* Parse.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92E8659F1957ACDF00DC00D7 /* Credentialing Classes */ = {
+			isa = PBXGroup;
+			children = (
+				92E8659C1957ACD200DC00D7 /* SignupViewController.h */,
+				92E8659D1957ACD200DC00D7 /* SignupViewController.m */,
+				92E865991957ACBD00DC00D7 /* LoginViewController.h */,
+				92E8659A1957ACBD00DC00D7 /* LoginViewController.m */,
+			);
+			name = "Credentialing Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,9 +313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E8659B1957ACBD00DC00D7 /* LoginViewController.m in Sources */,
 				92C3E825195737D800BCBA42 /* AppDelegate.m in Sources */,
 				92C3E822195737D800BCBA42 /* main.m in Sources */,
 				92E8657F1957446A00DC00D7 /* InboxViewController.m in Sources */,
+				92E8659E1957ACD200DC00D7 /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

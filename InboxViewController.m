@@ -7,6 +7,7 @@
 //
 
 #import "InboxViewController.h"
+#import <Parse/Parse.h>
 
 @interface InboxViewController ()
 
@@ -21,8 +22,15 @@
     
     NSLog(@"wired right");
 
+
+//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//    testObject[@"foo"] = @"bar";
+//    [testObject saveInBackground];
+
+
     //Shows password flow immediately when view displays
     [self performSegueWithIdentifier:@"showLogin" sender:self];
+
 
 
     

@@ -34,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="894" y="465"/>
         </scene>
-        <!--View Controller - NowYouSeeItNowYouDon't-->
+        <!--Login View Controller - NowYouSeeItNowYouDon't-->
         <scene sceneID="0m3-sp-C4L">
             <objects>
-                <viewController id="cmw-3N-e4e" sceneMemberID="viewController">
+                <viewController id="cmw-3N-e4e" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5RL-Vt-ppU"/>
                         <viewControllerLayoutGuide type="bottom" id="NFb-0Z-mET"/>
@@ -79,15 +79,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="NowYouSeeItNowYouDon't" id="9uP-3U-dvH"/>
+                    <connections>
+                        <outlet property="passwordField" destination="jjc-ro-ScS" id="hJ5-eQ-TrS"/>
+                        <outlet property="usernameField" destination="xNw-gk-GRT" id="AUy-q2-mjy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lF-Pv-RVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1465" y="465"/>
         </scene>
-        <!--View Controller - NowYouSeeItNowYouDon't-->
+        <!--Signup View Controller - NowYouSeeItNowYouDon't-->
         <scene sceneID="VMv-Zs-Jtz">
             <objects>
-                <viewController id="nxl-7d-0Eo" sceneMemberID="viewController">
+                <viewController id="nxl-7d-0Eo" customClass="SignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UXX-hs-i53"/>
                         <viewControllerLayoutGuide type="bottom" id="eUB-4P-vel"/>
@@ -106,19 +110,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-go-zSF">
+                                <rect key="frame" x="63" y="240" width="195" height="40"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerButtonWasClicked:" destination="nxl-7d-0Eo" eventType="touchUpInside" id="QUQ-NX-m5r"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GA7-cn-2gK">
                                 <rect key="frame" x="20" y="192" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-go-zSF">
-                                <rect key="frame" x="63" y="240" width="195" height="40"/>
-                                <state key="normal" title="Register"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="NowYouSeeItNowYouDon't" id="kA1-7k-8Fl"/>
+                    <connections>
+                        <outlet property="emailField" destination="GA7-cn-2gK" id="2eI-e9-nIm"/>
+                        <outlet property="passwordField" destination="YyZ-2g-304" id="hXs-46-D0z"/>
+                        <outlet property="usernameField" destination="eLO-do-66H" id="WGZ-qJ-qux"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nJ-Y2-Kbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
