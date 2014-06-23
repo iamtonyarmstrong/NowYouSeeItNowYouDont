@@ -63,13 +63,22 @@
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(!error){
                 NSLog(@"Hooray!! successful");
+
+                //This takes me back to the root - first - view in the heirarchy.
+                [self.navigationController popToRootViewControllerAnimated:YES];
             } else {
                 NSLog(@"There was a problem");
+                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Sorry!"
+                                                                message:[error.userInfo objectForKey:@"error"]
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+
                 NSString *errorString = [error userInfo][@"error"];
                 NSLog(@"%@", errorString);
             }
         }];
-
 
     }
 
