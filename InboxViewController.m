@@ -19,8 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@"wired right");
+
 
 
 //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
@@ -28,8 +27,16 @@
 //    [testObject saveInBackground];
 
 
-    //Shows password flow immediately when view displays
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    //Shows password flow immediately when view displays if necessary...
+    PFUser * currentUser = [PFUser currentUser];
+
+    if(currentUser){
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    } else {
+        NSLog (@"Current user: %@", currentUser.username );
+    }
+
+
 
 
 
