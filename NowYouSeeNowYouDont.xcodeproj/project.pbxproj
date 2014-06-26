@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92101155195BC49C00D24FCA /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92101154195BC49C00D24FCA /* EditFriendsViewController.m */; };
 		92C3E822195737D800BCBA42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3E821195737D800BCBA42 /* main.m */; };
 		92C3E825195737D800BCBA42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3E824195737D800BCBA42 /* AppDelegate.m */; };
 		92C3E827195737D800BCBA42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C3E826195737D800BCBA42 /* Images.xcassets */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92101153195BC49C00D24FCA /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
+		92101154195BC49C00D24FCA /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 		92C3E81C195737D800BCBA42 /* NowYouSeeNowYouDont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowYouSeeNowYouDont.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C3E820195737D800BCBA42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C3E821195737D800BCBA42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 		92E865801957448200DC00D7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				92101153195BC49C00D24FCA /* EditFriendsViewController.h */,
+				92101154195BC49C00D24FCA /* EditFriendsViewController.m */,
 				92E8657D1957446A00DC00D7 /* InboxViewController.h */,
 				92E8657E1957446A00DC00D7 /* InboxViewController.m */,
 			);
@@ -317,6 +322,7 @@
 				92C3E825195737D800BCBA42 /* AppDelegate.m in Sources */,
 				92C3E822195737D800BCBA42 /* main.m in Sources */,
 				92E8657F1957446A00DC00D7 /* InboxViewController.m in Sources */,
+				92101155195BC49C00D24FCA /* EditFriendsViewController.m in Sources */,
 				92E8659E1957ACD200DC00D7 /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

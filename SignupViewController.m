@@ -35,7 +35,14 @@
 */
 
 
-#pragma mark - IBOutlet methods
+#pragma mark - Capture Touch Events/IBActions Methods
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.usernameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+    [self.emailField resignFirstResponder];
+}
+
 - (IBAction)registerButtonWasClicked:(id)sender
 {
     NSString * username = [self.usernameField.text

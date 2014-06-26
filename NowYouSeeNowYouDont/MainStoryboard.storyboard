@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SYs-dJ-BCE">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
-        <!--Inbox View Controller - NowYouSeeItNowYouDon't-->
+        <!--Inbox View Controller - Inbox-->
         <scene sceneID="eoO-OR-Ejk">
             <objects>
                 <tableViewController id="7nF-z7-kn9" customClass="InboxViewController" sceneMemberID="viewController">
@@ -25,7 +26,13 @@
                             <outlet property="delegate" destination="7nF-z7-kn9" id="WhW-el-FAN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="NowYouSeeItNowYouDon't" id="Vly-OK-k3w"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="Vly-OK-k3w">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="J12-7d-U1x">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="7nF-z7-kn9" id="kzx-oV-kPk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="cmw-3N-e4e" kind="push" identifier="showLogin" id="aLJ-bS-BF6"/>
                     </connections>
@@ -34,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="894" y="465"/>
         </scene>
-        <!--Login View Controller - NowYouSeeItNowYouDon't-->
+        <!--Login View Controller - Join Us-->
         <scene sceneID="0m3-sp-C4L">
             <objects>
                 <viewController id="cmw-3N-e4e" customClass="LoginViewController" sceneMemberID="viewController">
@@ -81,7 +88,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="NowYouSeeItNowYouDon't" id="9uP-3U-dvH"/>
+                    <navigationItem key="navigationItem" title="Join Us" id="9uP-3U-dvH"/>
                     <connections>
                         <outlet property="passwordField" destination="jjc-ro-ScS" id="hJ5-eQ-TrS"/>
                         <outlet property="usernameField" destination="xNw-gk-GRT" id="AUy-q2-mjy"/>
@@ -139,7 +146,7 @@
             </objects>
             <point key="canvasLocation" x="2012" y="465"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller - Friends-->
         <scene sceneID="AZv-1v-qQh">
             <objects>
                 <tableViewController id="lmD-GK-HGO" sceneMemberID="viewController">
@@ -160,11 +167,44 @@
                             <outlet property="delegate" destination="lmD-GK-HGO" id="U16-g8-YdU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Qfu-Qf-UhH"/>
+                    <navigationItem key="navigationItem" title="Friends" id="Qfu-Qf-UhH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="hXV-wP-SlG">
+                            <connections>
+                                <segue destination="mCv-mq-qtN" kind="push" id="sHQ-9z-nLO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dR-At-wV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="895" y="1085"/>
+        </scene>
+        <!--Edit Friends View Controller - Edit Friends-->
+        <scene sceneID="Vx6-qZ-Zgx">
+            <objects>
+                <tableViewController id="mCv-mq-qtN" customClass="EditFriendsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EGa-jt-4PT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="HZu-nk-EC1">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HZu-nk-EC1" id="PJc-M9-shQ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mCv-mq-qtN" id="ibt-bb-u6B"/>
+                            <outlet property="delegate" destination="mCv-mq-qtN" id="1dF-II-3RP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Friends" id="ZWp-d7-GRj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wsY-BK-FuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1465" y="1085"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="b4v-Ai-GSw">

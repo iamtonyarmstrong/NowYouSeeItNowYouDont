@@ -19,7 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
+    self.navigationItem.hidesBackButton = YES;
 }
 
 
@@ -33,6 +35,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Capture Touch Events/IBActions
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.usernameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+}
 
 
 - (IBAction)loginButtonPressed:(id)sender
@@ -53,10 +62,7 @@
         [PFUser logInWithUsernameInBackground:username
                                      password:password
                                         block:^(PFUser *user, NSError *error) {
-                                            if (user) {
-                                                // Do stuff after successful login.
-                                                [self.navigationController popToRootViewControllerAnimated:YES];
-                                            } else {
+                                            if (error) {
                                                 // The login failed. Check error to see why.
                                                 NSLog(@"There was a problem");
                                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Sorry!"
@@ -65,11 +71,13 @@
                                                                                       cancelButtonTitle:@"OK"
                                                                                       otherButtonTitles:nil];
                                                 [alert show];
-                                                
+
                                                 NSString *errorString = [error userInfo][@"error"];
                                                 NSLog(@"%@", errorString);
-                                                
-
+                                            } else {
+                                                // Do stuff after successful login.
+                                                [self.navigationController popToRootViewControllerAnimated:YES];
+                                                NSLog(@"Hooray!! Login in success");
 
                                             }
                                         }];
