@@ -12,5 +12,6 @@
 @interface EditFriendsViewController : UITableViewController <UITableViewDataSource>
 
 @property (nonatomic, strong) PFUser * currentUser;
+@property (nonatomic, strong) NSMutableArray * friends;
 
 @end

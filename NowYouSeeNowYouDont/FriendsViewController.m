@@ -7,6 +7,7 @@
 //
 
 #import "FriendsViewController.h"
+#import "EditFriendsViewController.h"
 
 @interface FriendsViewController ()
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    self.friendsRelation = [[PFUser currentUser] relationForKey:@"friendsRelation"];
     PFQuery * query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -97,7 +98,6 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -105,7 +105,11 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"showEditFriends" ]){
+        //Get an instance of the view controller, then add the friends to that VC
+        EditFriendsViewController * efvc = (EditFriendsViewController * )segue.destinationViewController;
+        efvc.friends = [NSMutableArray arrayWithArray:self.friends];
+    }
 }
-*/
 
 @end

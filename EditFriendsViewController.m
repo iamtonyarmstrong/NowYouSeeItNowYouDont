@@ -58,9 +58,19 @@
     PFUser * user = [self.allUsers objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
 
+    //test to see which users are Friends and identify them with checkmarks
+    if ([self isFriend:user]) {
+        //add checkmark
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        //remove checkmark
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+
     return cell;
 
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -88,5 +98,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Helper Methods
+- (BOOL)isFriend:(PFUser *) user
+{
+    //look to see if users in the friends array are actually friends by comparining objectIds from Parse
+    for (PFUser * friend in self.friends){
+        if([friend.objectId isEqualToString:user.objectId]){
+            return YES;
+        }
+    }
+    return NO;
+}
 
 @end
