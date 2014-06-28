@@ -7,7 +7,7 @@
 //
 
 #import "EditFriendsViewController.h"
-#import <Parse/Parse.h>
+
 
 @interface EditFriendsViewController ()
 
@@ -33,10 +33,11 @@
         }
     }];
 
+    self.currentUser = [PFUser currentUser];
+
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -59,6 +60,22 @@
 
     return cell;
 
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    PFRelation * friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+    PFUser * selectedUser = [self.allUsers objectAtIndex:indexPath.row];
+    [friendsRelation addObject:selectedUser];
+    [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if(error){
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 /*

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface EditFriendsViewController : UITableViewController <UITableViewDataSource>
+
+@property (nonatomic, strong) PFUser * currentUser;
 
 @end
