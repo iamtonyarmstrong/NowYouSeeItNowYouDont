@@ -205,16 +205,16 @@
             </objects>
             <point key="canvasLocation" x="1465" y="1085"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="b4v-Ai-GSw">
             <objects>
-                <tableViewController id="g64-ie-DU0" sceneMemberID="viewController">
+                <tableViewController id="g64-ie-DU0" customClass="CameraViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cX5-Gm-Wi1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" id="oCJ-LY-qvB">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="oCJ-LY-qvB">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCJ-LY-qvB" id="RGq-HR-ib4">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -226,7 +226,18 @@
                             <outlet property="delegate" destination="g64-ie-DU0" id="WD2-3R-Ag2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="o2V-zE-6YA"/>
+                    <navigationItem key="navigationItem" id="o2V-zE-6YA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Kaz-rI-08L">
+                            <connections>
+                                <action selector="cancel:" destination="g64-ie-DU0" id="l9F-K5-8rE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="jsD-Vf-XzB">
+                            <connections>
+                                <action selector="sendImage:" destination="g64-ie-DU0" id="12N-ZU-U6L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MDZ-Ww-VPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

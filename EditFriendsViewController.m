@@ -77,10 +77,28 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    PFRelation * friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+
     PFUser * selectedUser = [self.allUsers objectAtIndex:indexPath.row];
-    [friendsRelation addObject:selectedUser];
+    PFRelation * friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+
+    if([self isFriend:selectedUser]){
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        for (PFUser * friend in self.friends){
+            if([friend.objectId isEqualToString:selectedUser.objectId]){
+                [self.friends removeObject:friend];
+                break;
+            }
+        }
+
+        [friendsRelation removeObject:selectedUser];
+
+    }else{
+
+        [friendsRelation addObject:selectedUser];
+        [self.friends addObject:selectedUser];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(error){
             NSLog(@"Error: %@ %@", error, [error userInfo]);
